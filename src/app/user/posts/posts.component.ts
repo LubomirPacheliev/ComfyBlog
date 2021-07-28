@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-posts',
@@ -6,13 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent{
-
-  posts = [
-    {user: 'tempUsr', content: 'tempusr content for testing purposes', title: 'title'},
-    {user: 'tempUsr1', content: 'tempusr content for testing purposes', title: 'title'},
-    {user: 'tempUsr2', content: 'tempusr content for testing purposes', title: 'title'},
-    {user: 'tempUsr3', content: 'tempusr content for testing purposes', title: 'title'},
-  ]
-
-  constructor() { }
+  posts: Observable<any[]>;
+  constructor(firestore: AngularFirestore) { 
+    this.posts = firestore.collection('posts').valueChanges();
+  }
 }
