@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { RegisterService } from '../services/register/register.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  providers: [RegisterService]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent{
+  constructor(private registerService: RegisterService) { }
 
-  constructor() { }
+  onClick() {
+    const [email, password, repassword]: (HTMLInputElement | null)[] = [
+      document.querySelector('#email'),
+      document.querySelector('#password'),
+      document.querySelector('#repassword')
+    ];
 
-  ngOnInit(): void {
+    const user = {
+      email: email?.value,
+      password: password?.value,
+      repassword: repassword?.value
+    };
+
+    this.registerService.register(user);
   }
-
 }

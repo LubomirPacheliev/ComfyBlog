@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RegisterService } from '../services/register/register.service';
 
 
 
