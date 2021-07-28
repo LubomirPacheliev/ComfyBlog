@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mainbase-2c441": {
+      "hosting": {
+        "app": [
+          "mainbase-2c441"
+        ]
+      }
+    }
+  }
+}
