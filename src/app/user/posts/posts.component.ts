@@ -10,6 +10,6 @@ import { Observable } from 'rxjs';
 export class PostsComponent{
   posts: Observable<any[]>;
   constructor(firestore: AngularFirestore) { 
-    this.posts = firestore.collection('posts').valueChanges();
+    this.posts = firestore.collection('posts').valueChanges(); // CRUD should be implemented in services broski
   }
 }
