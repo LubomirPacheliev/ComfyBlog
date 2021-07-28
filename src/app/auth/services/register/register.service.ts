@@ -11,7 +11,8 @@ export class RegisterService {
     if (user.password === user.repassword) {
       if (user.email && user.password) this.fireauth.createUserWithEmailAndPassword(user.email, user.password);
     } else {
-      // TODO: add notification or something
+      // TODO: Add notification or something
     }
+    // TODO: Navigate to posts page
   }
 }
