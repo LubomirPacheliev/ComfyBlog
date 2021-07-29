@@ -13,7 +13,7 @@ export class LoginComponent {
 
   constructor(public loginService: LoginService) { }
 
-  onClick() {
+  onClick(): string | null | undefined {
     const [email, password]: (HTMLInputElement | null)[] = [
       document.querySelector('#email'),
       document.querySelector('#password')
@@ -24,6 +24,6 @@ export class LoginComponent {
       password: password?.value
     };
 
-    this.loginService.login(user);
+    return this.loginService.login(user);
   }
 }
