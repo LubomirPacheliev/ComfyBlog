@@ -15,8 +15,7 @@ export class AppComponent implements OnInit {
   constructor(public activeRoute: ActivatedRoute, public logoutService: LogoutService, public fireauth: AngularFireAuth) {}
 
   ngOnInit() {
-    //Check out fireauth.authstate
-    this.fireauth.user.subscribe(observer => this.userState = observer?.email);
+    this.fireauth.user.subscribe(observer => this.userState = observer?.email); //Check out fireauth.authstate
   }
 
   onClick() {

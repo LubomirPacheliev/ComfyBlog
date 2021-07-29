@@ -8,7 +8,7 @@ import { RegisterService } from '../services/register/register.service';
   providers: [RegisterService]
 })
 export class RegisterComponent{
-  constructor(private registerService: RegisterService) { }
+  constructor(public registerService: RegisterService) { }
 
   onClick() {
     const [email, password, repassword]: (HTMLInputElement | null)[] = [
