@@ -3,11 +3,11 @@
         <li>
             <a routerLink="posts">Posts</a>
         </li>
-        <li *ngIf="userState">
-            <a routerLink="['/login', userState]">Login</a>
-        </li>
         <li *ngIf="!userState">
-            <a routerLink="['/logout', userState]">Logout</a>
+            <a routerLink="login">Login</a>
+        </li>
+        <li *ngIf="userState">
+            <a routerLink="login" (click)="onClick()">Logout</a>
         </li>
     </ul>
 </nav>

@@ -10,15 +10,10 @@ export class LoginService {
   constructor(public fireauth: AngularFireAuth, public router: Router) { }
 
   login(user: {email?: string, password?: string, repassword?: string}) {
-    let userState: string | null | undefined;
-
     if (user.email && user.password) {
       this.fireauth.signInWithEmailAndPassword(user.email, user.password);
       this.router.navigate(['/posts']);
-      this.fireauth.user.subscribe(observer=>userState = observer?.email);
     }
     // TODO: Fail notification
-
-    return userState;
   }
 }

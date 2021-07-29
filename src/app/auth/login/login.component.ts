@@ -11,8 +11,6 @@ import { LoginService } from '../services/login/login.service';
 })
 export class LoginComponent {
 
-  userState: string | null | undefined;
-
   constructor(public loginService: LoginService) { }
 
   onClick() {
@@ -26,6 +24,6 @@ export class LoginComponent {
       password: password?.value
     };
 
-    this.userState = this.loginService.login(user);
+    this.loginService.login(user);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute } from '@angular/router';
+import { LogoutService } from './auth/services/logout/logout.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +12,15 @@ export class AppComponent implements OnInit {
 
   userState: string | null | undefined;
 
-  constructor(private activeRoute: ActivatedRoute) {}
+  constructor(public activeRoute: ActivatedRoute, public logoutService: LogoutService, public fireauth: AngularFireAuth) {}
 
   ngOnInit() {
-    this.userState = this.activeRoute.snapshot.params['userState'];
+    //Check out fireauth.authstate
+    this.fireauth.user.subscribe(observer => this.userState = observer?.email);
+  }
+
+  onClick() {
+    this.logoutService.logout();
+    this.fireauth.user.subscribe(observer => this.userState = observer?.email);
   }
 }
