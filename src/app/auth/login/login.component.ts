@@ -11,9 +11,11 @@ import { LoginService } from '../services/login/login.service';
 })
 export class LoginComponent {
 
+  userState: string | null | undefined;
+
   constructor(public loginService: LoginService) { }
 
-  onClick(): string | null | undefined {
+  onClick() {
     const [email, password]: (HTMLInputElement | null)[] = [
       document.querySelector('#email'),
       document.querySelector('#password')
@@ -24,6 +26,6 @@ export class LoginComponent {
       password: password?.value
     };
 
-    return this.loginService.login(user);
+    this.userState = this.loginService.login(user);
   }
 }

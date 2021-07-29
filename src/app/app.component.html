@@ -3,8 +3,11 @@
         <li>
             <a routerLink="posts">Posts</a>
         </li>
-        <li>
-            <a routerLink="login">login</a>
+        <li *ngIf="userState">
+            <a routerLink="['/login', userState]">Login</a>
+        </li>
+        <li *ngIf="!userState">
+            <a routerLink="['/logout', userState]">Logout</a>
         </li>
     </ul>
 </nav>
