@@ -18,8 +18,7 @@ export class PostsComponent implements OnInit {
   }
 
   navigateToPostDetails() {
-    let id;
-    this.router.navigate([`posts/${id}`]);
+    this.router.navigate([`posts/:id`]);
   }
 
   getPosts() {
