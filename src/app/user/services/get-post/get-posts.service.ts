@@ -15,11 +15,13 @@ export class GetPostsService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getPosts(): PostsObsv {
-    this.allPosts = this.firestore.collection('posts').valueChanges();
+  getPosts(): PostsObsv | undefined {
+   this.allPosts = this.firestore.collection('posts').valueChanges();
+
     this.firestore.collection('posts').get({}).subscribe(posts => {
       posts.docs.map(doc => this.allPostIds?.push(doc.id));
     });
+
     return this.allPosts;
   }
 
@@ -28,6 +30,6 @@ export class GetPostsService {
   }
 
   getSinglePost(id: string) {
-    return this.firestore.doc(id);
+    return this.firestore.collection('posts').doc<object>(id).get();
   }
 }
