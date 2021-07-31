@@ -12,4 +12,8 @@ export class PosteditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  editPost() {
+    
+  }
+
 }

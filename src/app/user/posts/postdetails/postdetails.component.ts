@@ -20,7 +20,7 @@ export class PostdetailsComponent implements OnInit {
       this.postId = param.id;
       this.getService.getSinglePost(param.id)
       .subscribe(post => {
-       this.post = post.data()
+       this.post = post.data();
       });
     });
   }
