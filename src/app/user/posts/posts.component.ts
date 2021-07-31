@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GetPostsService } from '../services/get-post/get-posts.service';
 
@@ -10,10 +11,15 @@ import { GetPostsService } from '../services/get-post/get-posts.service';
 export class PostsComponent implements OnInit {
   posts: Observable<any[]> | undefined;
 
-  constructor(public getPostService: GetPostsService) { }
+  constructor(public getPostService: GetPostsService, public router: Router) { }
 
   ngOnInit() {
     this.getPosts();
+  }
+
+  navigateToPostDetails() {
+    let id;
+    this.router.navigate([`posts/${id}`]);
   }
 
   getPosts() {

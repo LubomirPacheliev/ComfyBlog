@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PostsComponent } from '../posts/posts.component';
 import { CreateComponent } from '../posts/create/create.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { PostdetailsComponent } from '../posts/postdetails/postdetails.component';
 
 
 
 @NgModule({
   declarations: [
     PostsComponent,
-    CreateComponent
+    CreateComponent,
+    PostdetailsComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   ],
   exports: [
     PostsComponent,
-    CreateComponent
+    CreateComponent,
+    PostdetailsComponent
   ]
 })
 export class UserModule { }
