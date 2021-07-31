@@ -17,8 +17,14 @@ export class PostsComponent implements OnInit {
     this.getPosts();
   }
 
-  navigateToPostDetails() {
-    this.router.navigate([`posts/:id`]);
+  navigateToPostDetails($event: MouseEvent) {
+    const allIds = this.getPostService.getAllPostIds();
+    const clickedPost = $event.currentTarget;
+    const allDisplayedPosts = document.querySelectorAll('.post');
+
+    allDisplayedPosts.forEach((currPost, index) => {
+      if (currPost === clickedPost) this.router.navigate([`posts`, allIds![index]]);
+    });
   }
 
   getPosts() {
