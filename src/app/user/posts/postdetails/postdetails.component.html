@@ -2,4 +2,6 @@
     <h1>{{post?.title}}</h1>
     <p>{{post?.content}}</p>
     <p>by: {{post?.user}}</p>
+    <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
+    <button class="details-btn" id="delete">Delete</button>
 </div>

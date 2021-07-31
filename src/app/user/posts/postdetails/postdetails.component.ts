@@ -23,4 +23,8 @@ export class PostdetailsComponent implements OnInit {
     });
     console.log(this.post)
   }
+
+  navigateToPostEdit() {
+    
+  }
 }

@@ -4,6 +4,7 @@ import { PostsComponent } from '../posts/posts.component';
 import { CreateComponent } from '../posts/create/create.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { PostdetailsComponent } from '../posts/postdetails/postdetails.component';
+import { PosteditComponent } from '../posts/postedit/postedit.component';
 
 
 
@@ -11,7 +12,8 @@ import { PostdetailsComponent } from '../posts/postdetails/postdetails.component
   declarations: [
     PostsComponent,
     CreateComponent,
-    PostdetailsComponent
+    PostdetailsComponent,
+    PosteditComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { PostdetailsComponent } from '../posts/postdetails/postdetails.component
   exports: [
     PostsComponent,
     CreateComponent,
-    PostdetailsComponent
+    PostdetailsComponent,
+    PosteditComponent
   ]
 })
 export class UserModule { }
