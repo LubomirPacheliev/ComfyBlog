@@ -6,6 +6,7 @@ import { CreateComponent } from './user/posts/create/create.component';
 import { PostdetailsComponent } from './user/posts/postdetails/postdetails.component';
 import { PosteditComponent } from './user/posts/postedit/postedit.component';
 import { PostsComponent } from './user/posts/posts.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'posts/:id/edit',
     component: PosteditComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 
