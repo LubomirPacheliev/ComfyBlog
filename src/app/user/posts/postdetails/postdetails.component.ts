@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DeletePostService } from '../../services/delete-post/delete-post.service';
 import { GetPostsService } from '../../services/get-post/get-posts.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class PostdetailsComponent implements OnInit {
   post?: {title?: string, content?: string, user?: string};
   postId?: string;
 
-  constructor(public getService: GetPostsService, public route: ActivatedRoute, public router: Router) { }
+  constructor(public getService: GetPostsService, public route: ActivatedRoute, public router: Router, public deleteService: DeletePostService) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => { 
@@ -27,5 +28,9 @@ export class PostdetailsComponent implements OnInit {
 
   navigateToPostEdit() {
     this.router.navigate([`posts/${this.postId}/edit`])
+  }
+
+  deletePost() {
+    this.deleteService.delete(this.postId);
   }
 }
