@@ -13,7 +13,6 @@ import { GetPostsService } from '../services/get-post/get-posts.service';
 export class ProfileComponent implements OnInit {
 
   email?: string | null;
-  // posts?: Observable<any[]>;
   posts?: {title: string, content: string, user: string}[];
 
   constructor(public auth: AngularFireAuth, public firestore: AngularFirestore, public getService: GetPostsService) {}

@@ -2,6 +2,8 @@
     <h1>{{post?.title}}</h1>
     <p>{{post?.content}}</p>
     <p>by: {{post?.user}}</p>
-    <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
-    <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>
+    <div class="crud-buttons" *ngIf="post?.user == currUser">
+        <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
+        <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>
+    </div>
 </div>

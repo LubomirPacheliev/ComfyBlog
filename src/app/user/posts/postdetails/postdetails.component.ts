@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DeletePostService } from '../../services/delete-post/delete-post.service';
@@ -13,8 +14,15 @@ export class PostdetailsComponent implements OnInit {
 
   post?: {title?: string, content?: string, user?: string};
   postId?: string;
+  currUser?: string | null;
 
-  constructor(public getService: GetPostsService, public route: ActivatedRoute, public router: Router, public deleteService: DeletePostService) { }
+  constructor(
+    public getService: GetPostsService,
+    public route: ActivatedRoute, 
+    public router: Router, 
+    public deleteService: DeletePostService,
+    public auth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => { 
@@ -24,6 +32,8 @@ export class PostdetailsComponent implements OnInit {
        this.post = post.data();
       });
     });
+
+    this.auth.user.subscribe(user => this.currUser = user?.email)
   }
 
   navigateToPostEdit() {
