@@ -3,13 +3,16 @@
         <li>
             <a routerLink="posts">Posts</a>
         </li>
+        <li *ngIf="userState">
+            <a routerLink="/posts/create">Create</a>
+        </li>
         <li *ngIf="!userState">
             <a routerLink="login">Login</a>
         </li>
         <li *ngIf="userState">
             <a routerLink="login" (click)="onClick()">Logout</a>
         </li>
-        <li>
+        <li *ngIf="userState">
             <a routerLink="profile">Profile</a>
         </li>
     </ul>
