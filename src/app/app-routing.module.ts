@@ -29,6 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'posts/create',
+    canActivate: [CanActivateGuard],
     component: CreateComponent
   },
   {
