@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { CanActivateGuard } from './user/guards/can-activate.guard';
 import { CreateComponent } from './user/posts/create/create.component';
 import { PostdetailsComponent } from './user/posts/postdetails/postdetails.component';
 import { PosteditComponent } from './user/posts/postedit/postedit.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'posts'
   },
   {
     path: 'login',
@@ -40,6 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [CanActivateGuard],
     component: ProfileComponent
   }
 ];

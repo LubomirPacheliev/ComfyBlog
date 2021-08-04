@@ -1,8 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { from, Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { GetPostsService } from '../services/get-post/get-posts.service';
 
 @Component({
