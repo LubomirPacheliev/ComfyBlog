@@ -1,27 +1,23 @@
-# App
+Brief Description: 
+Simple blog using Angular and AngularFire/Firebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+Installation:
+You might need to run npm install with --legacy-peer-deps or --force inside the project directory since the 
+angular CLI created the project with some deprecated versions of the dependencies and I couldn't manage to fix that.
 
-## Development server
+Structure:
+The whole app is divided between the auth and user directories
+under the auth directory there's the auth module, the login and register components and auth services
+under the user directory there's the user module, the components for all of the other pages and crud services
+along with the router guards
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Public Part:
+The Posts Page
+The Posts Detail Page
+Login, Register
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Private Part:
+Create Page
+Edit and Delete on Details Page (if you're the author of the post)
+Edit Page
+My Posts Page
