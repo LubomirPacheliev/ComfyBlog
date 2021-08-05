@@ -12,12 +12,12 @@ under the user directory there's the user module, the components for all of the 
 along with the router guards
 
 Public Part:
-The Posts Page
-The Posts Detail Page
+The Posts Page,
+The Posts Detail Page,
 Login, Register
 
 Private Part:
-Create Page
-Edit and Delete on Details Page (if you're the author of the post)
-Edit Page
+Create Page,
+Edit and Delete on Details Page (if you're the author of the post),
+Edit Page,
 My Posts Page
