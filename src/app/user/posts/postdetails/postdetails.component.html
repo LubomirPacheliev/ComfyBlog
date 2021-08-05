@@ -1,9 +1,11 @@
-<div class="post">
-    <h1>{{post?.title}}</h1>
-    <p>{{post?.content}}</p>
-    <p id="author">by: {{post?.user}}</p>
-    <div class="crud-buttons" *ngIf="post?.user == currUser">
-        <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
-        <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>
-    </div>
-</div>
+<section class="details-wrap">
+    <article class="post" id="edit-post-article">
+        <h1>{{post?.title}}</h1>
+        <p>{{post?.content}}</p>
+        <p id="author">by: {{post?.user}}</p>
+        <div class="crud-buttons" *ngIf="post?.user == currUser">
+            <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
+            <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>
+        </div>
+    </article>
+</section>
