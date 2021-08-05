@@ -129,6 +129,10 @@ section.posts {
     height: 100%;
 }
 
+.auth p {
+    margin: 10px;
+}
+
 form.auth {
     position: relative;
     top: 100px;

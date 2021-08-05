@@ -11,9 +11,18 @@ export class LoginService {
 
   login(user: {email?: string, password?: string}) {
     if (user.email && user.password) {
-      this.fireauth.signInWithEmailAndPassword(user.email, user.password);
-      this.router.navigate(['/posts']);
+      this.fireauth.signInWithEmailAndPassword(user.email, user.password)
+      .then(res => {
+        if (res.user) {
+          this.router.navigate(['/posts']);
+        }
+      })
+      .catch(err => {
+        document.querySelector('.auth p')!.innerHTML = err.message;
+        setTimeout(() => {
+          document.querySelector('.auth p')!.innerHTML = '';
+        }, 5000);
+      });
     }
-    // TODO: Fail notification
   }
 }
