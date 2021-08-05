@@ -1,7 +1,7 @@
 <div class="post">
     <h1>{{post?.title}}</h1>
     <p>{{post?.content}}</p>
-    <p>by: {{post?.user}}</p>
+    <p id="author">by: {{post?.user}}</p>
     <div class="crud-buttons" *ngIf="post?.user == currUser">
         <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
         <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>

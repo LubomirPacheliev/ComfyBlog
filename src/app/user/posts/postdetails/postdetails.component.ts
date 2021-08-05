@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DeletePostService } from '../../services/delete-post/delete-post.service';
 import { GetPostsService } from '../../services/get-post/get-posts.service';
 
