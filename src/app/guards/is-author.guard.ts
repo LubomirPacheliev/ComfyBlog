@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { GetPostsService } from '../services/get-post/get-posts.service';
+import { GetPostsService } from '../user/services/get-post/get-posts.service';
 
 @Injectable({
   providedIn: 'root'
