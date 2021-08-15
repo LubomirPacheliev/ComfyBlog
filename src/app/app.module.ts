@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth/auth.module';
+import { AuthModule } from './auth/auth-module/auth.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { UserModule } from './user/user/user.module';
+import { UserModule } from './user/user-module/user.module';
 
 @NgModule({
   declarations: [
