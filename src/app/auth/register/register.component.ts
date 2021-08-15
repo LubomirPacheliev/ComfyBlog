@@ -1,14 +1,14 @@
 import { Component} from '@angular/core';
-import { RegisterService } from '../services/register/register.service';
+import { AuthService } from '../auth-service/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers: [RegisterService]
+  providers: [AuthService]
 })
 export class RegisterComponent{
-  constructor(public registerService: RegisterService) { }
+  constructor(public authService: AuthService) { }
 
   onClick() {
     const [email, password, repassword]: (HTMLInputElement | null)[] = [
@@ -23,6 +23,6 @@ export class RegisterComponent{
       repassword: repassword?.value
     };
 
-    this.registerService.register(user);
+    this.authService.register(user);
   }
 }

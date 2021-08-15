@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../services/login/login.service';
+import { AuthService } from '../auth-service/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   providers: [
-    LoginService
+    AuthService
   ]
 })
 export class LoginComponent {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public authService: AuthService) { }
 
   onClick() {
     const [email, password]: (HTMLInputElement | null)[] = [
@@ -24,6 +24,6 @@ export class LoginComponent {
       password: password?.value
     };
 
-    this.loginService.login(user);
+    this.authService.login(user);
   }
 }

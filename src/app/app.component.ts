@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { LogoutService } from './auth/services/logout/logout.service';
+import { AuthService } from './auth/auth-service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,14 @@ export class AppComponent implements OnInit {
 
   userState: string | null | undefined;
 
-  constructor(public logoutService: LogoutService, public fireauth: AngularFireAuth) {}
+  constructor(public authService: AuthService, public fireauth: AngularFireAuth) {}
 
   ngOnInit() {
     this.fireauth.user.subscribe(observer => this.userState = observer?.email); //Check out fireauth.authstate
   }
 
   onClick() {
-    this.logoutService.logout();
+    this.authService.logout();
     this.fireauth.user.subscribe(observer => this.userState = observer?.email);
   }
 }
