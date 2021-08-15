@@ -28,8 +28,11 @@ export class PosteditComponent implements OnInit {
 
       this.getPostService.getSinglePost(this.id!).subscribe(post => {
         const postData: any = post.data();
-        document.querySelector('#title')!.innerHTML = postData.title
-        document.querySelector('#content')!.innerHTML = postData.content;
+        const title: HTMLInputElement = document.querySelector('#title')!;
+        const content = document.querySelector('#content')!;
+        
+        title.value = postData.title;
+        content.innerHTML = postData.content;
       })
     });
   }
