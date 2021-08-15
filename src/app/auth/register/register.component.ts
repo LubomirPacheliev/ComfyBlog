@@ -4,8 +4,7 @@ import { AuthService } from '../auth-service/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  providers: [AuthService]
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent{
   constructor(public authService: AuthService) { }
