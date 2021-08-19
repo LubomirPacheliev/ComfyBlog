@@ -12,7 +12,8 @@ body {
 }
 
 .second-bg-color-container {
-    position: relative;
+    position: absolute;
+    min-height: calc(100vh - 150px);
     width: 94%;
     left: 4%;
     z-index: -10;
@@ -63,6 +64,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .post {
@@ -76,6 +78,7 @@ body {
     padding: 20px 0px 20px 30px;
     display: flex;
     flex-direction: column;
+    z-index: 150px;
     word-wrap: break-word;
 }
 
@@ -92,4 +95,8 @@ body {
     font-size: 20px;
     width: 80%;
     margin-top: 5px;
+}
+
+.post p:last-child {
+    margin-top: auto;
 }

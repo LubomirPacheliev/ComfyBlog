@@ -18,6 +18,7 @@ export class PostsComponent implements OnInit {
   }
 
   navigateToPostDetails($event: MouseEvent) {
+    console.log('called')
     const allIds = this.getPostService.getAllPostIds();
     const clickedPost = $event.currentTarget;
     const allDisplayedPosts = document.querySelectorAll('.post');
