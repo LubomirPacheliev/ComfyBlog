@@ -46,3 +46,13 @@ body {
     text-transform: lowercase;
     padding: 5px;
 }
+
+.nav-bg-img {
+    position: absolute;
+    top: -130px;
+    left: 30px;
+    height: 520px;
+    width: 503px;
+    z-index: -29;
+    transform: rotate(-31deg);
+}
