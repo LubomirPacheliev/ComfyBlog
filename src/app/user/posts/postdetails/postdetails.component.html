@@ -2,10 +2,16 @@
     <article class="post" id="edit-post-article">
         <h1>{{post?.title}}</h1>
         <p>{{post?.content}}</p>
-        <p id="author">by: {{post?.user}}</p>
         <div class="crud-buttons" *ngIf="post?.user == currUser">
-            <button class="details-btn" id="edit" (click)="navigateToPostEdit()">Edit</button>
-            <button class="details-btn" id="delete" (click)="deletePost()">Delete</button>
+            <button class="details-btn" id="edit" (click)="navigateToPostEdit()">
+                <img src="../../../../assets/png/icons8-edit-64.png" alt="Edit">
+                <p>Edit</p>
+            </button>
+            <button class="details-btn" id="delete" (click)="deletePost()">
+                <img src="../../../../assets/png/icons8-delete-64.png" alt="Delete">
+                <p>Delete</p>
+            </button>
         </div>
+        <p id="author">by: {{post?.user}}</p>
     </article>
 </section>
