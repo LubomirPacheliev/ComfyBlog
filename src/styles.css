@@ -31,6 +31,11 @@ input {
   text-indent: 15px;
 }
 
+input:focus,
+textarea:focus {
+  border: solid 1px white;
+}
+
 .second-bg-color-container {
   position: absolute;
   min-height: calc(100vh - 150px);
@@ -193,22 +198,25 @@ input {
   width: 100%;
 }
 
-.postcreate form {
+.postcreate form,
+.pc-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.postcreate form textarea {
+.postcreate textarea {
   width: 30%;
   min-width: 100px;
   border: none;
   background-color: #3f474e;
   color: white;
+  font-size: 16px;
+  text-indent: 10px;
 }
 
-.postcreate form button {
+.postcreate button {
   width: 5%;
   min-width: 20px;
   height: 30px;
@@ -217,6 +225,16 @@ input {
   color: white;
   border: none;
   margin: 15px;
+  font-size: 20px;
+}
+
+.postcreate label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.postcreate input {
+  font-size: 16px;
 }
 
 .profile {
