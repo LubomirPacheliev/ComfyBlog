@@ -139,3 +139,9 @@ body {
 .auth a:active {
   color: white;
 }
+
+.details-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
